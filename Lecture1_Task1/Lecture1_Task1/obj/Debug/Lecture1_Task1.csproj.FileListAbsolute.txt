@@ -1,1 +1,6 @@
 D:\VS2015\Tasks\Lecture1_Task1\Lecture1_Task1\bin\Debug\Lecture1_Task1.exe.config
+D:\VS2015\Tasks\Lecture1_Task1\Lecture1_Task1\obj\Debug\Lecture1_Task1.csprojResolveAssemblyReference.cache
+D:\VS2015\Tasks\Lecture1_Task1\Lecture1_Task1\bin\Debug\Lecture1_Task1.exe
+D:\VS2015\Tasks\Lecture1_Task1\Lecture1_Task1\bin\Debug\Lecture1_Task1.pdb
+D:\VS2015\Tasks\Lecture1_Task1\Lecture1_Task1\obj\Debug\Lecture1_Task1.exe
+D:\VS2015\Tasks\Lecture1_Task1\Lecture1_Task1\obj\Debug\Lecture1_Task1.pdb
