@@ -11,9 +11,8 @@ namespace Lecture1_Task3
         static void Main(string[] args)
         {
             int a = Convert.ToInt32(Console.ReadLine());
-            int aa = a >> 1;
-            a = aa << 1;
-            Console.WriteLine(a);
+            int aa = a & (a - 1);
+            Console.WriteLine(aa);
             Console.ReadKey();
         }
     }
