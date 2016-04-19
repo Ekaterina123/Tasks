@@ -17,7 +17,7 @@ namespace Lecture2_Task1
             for (; i < n; i++)
             {
                 int a = Convert.ToInt32(Console.ReadLine());
-                if (i == 1)
+                if (i == 0)
                 {
                     max = a;
                     Minimal = a;
@@ -39,7 +39,7 @@ namespace Lecture2_Task1
                 if (a % 2 == 1)
                 {
                     CountNotEven++;
-                    Composition = Composition * a;  // еще ошибка
+                    Composition = Composition * a;  
                 }
                 Sum = Sum + a;
             }
