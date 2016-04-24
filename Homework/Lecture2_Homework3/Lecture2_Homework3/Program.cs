@@ -12,50 +12,60 @@ namespace Lecture2_Homework3
         {
 
             Console.WriteLine("Калькулятор вычисляет: [сложение(+); вычитание(-); умножение (*); деление(/)]");
-            Console.WriteLine("Введите левый операнд");
+            Console.WriteLine("Введите левый операнд:");
             int a;
-            if (int.TryParse(Console.ReadLine(), out a))
+
+            if ((int.TryParse(Console.ReadLine(), out a)) == false)
             {
-                
+                Console.WriteLine("Вы ввели неверный тип данных");
             }
-            
-            Console.WriteLine("Введите операцию");
-            string virag = Console.ReadLine();
-            Console.WriteLine("Введите правый операнд");
-            int b = Convert.ToInt32(Console.ReadLine());
-            int itog1=0;
-            if (virag == "+")
+            else
             {
-                itog1 = a + b;
-                Console.Write("=");
-                Console.WriteLine(itog1);
-            }
-            if (virag == "-")
-            {
-                itog1 = a - b;
-                Console.Write("=");
-                Console.WriteLine(itog1);
-            }
-            if (virag == "*")
-            {
-                itog1 = a * b;
-                Console.Write("=");
-                Console.WriteLine(itog1);
-            }
-            if (virag == "/")
-            {
-                if (b != 0)
+                Console.WriteLine("Введите операцию");
+                string virag = Console.ReadLine();
+                if (virag == "+" || virag == "-" || virag == "*" || virag == "/")
                 {
-                    itog1 = a / b;
-                    Console.WriteLine(itog1);
+                    Console.WriteLine("Введите правый операнд");
+                    int b;
+                    if ((int.TryParse(Console.ReadLine(), out b)) == false)
+                    {
+                        Console.WriteLine("Вы ввели неверный тип данных");
+                    }
+                    else
+                    {
+                        if (virag == "+")
+                        {
+                            Console.Write("=");
+                            Console.WriteLine(a+b);
+                        }
+                        if (virag == "-")
+                        {
+                            Console.Write("=");
+                            Console.WriteLine(a-b);
+                        }
+                        if (virag == "*")
+                        {
+                            Console.Write("=");
+                            Console.WriteLine(a*b);
+                        }
+                        if (virag == "/")
+                        {
+                            if (b != 0)
+                            {
+                                Console.WriteLine(a/b);
+                            }
+                            else
+                            {
+                                Console.WriteLine("На ноль делить нельзя");
+                            }
+                        }
+                    }      
                 }
                 else
                 {
-                Console.WriteLine("На ноль делить нельзя");
+                    Console.WriteLine("Операцию необходимо ввести одним из символов: + или - или * или / ");
+                }
             }
-            }
-
-
         }
     }
 }
