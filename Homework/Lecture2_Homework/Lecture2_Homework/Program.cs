@@ -16,7 +16,7 @@ namespace Lecture2_Homework
             Console.WriteLine("Введите число А от 0 до 10:");
             int a = Convert.ToInt32(Console.ReadLine());
             Random rnd = new Random();
-            int x = 0;
+            bool est = false;
 
             Console.WriteLine("Massiv:");
             for (int i = 0; i < n; i++)
@@ -28,12 +28,12 @@ namespace Lecture2_Homework
             {
                 if (num1[i] == a)
                 {
-                    x = 1;
+                    est = true;
                     break;
                 }
             }
 
-            if (x == 0)
+            if (!est)
             {
                 Console.WriteLine("No");
             }
