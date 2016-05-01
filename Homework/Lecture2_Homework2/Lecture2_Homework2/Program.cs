@@ -33,7 +33,7 @@ namespace Lecture2_Homework2
             Console.WriteLine("Massiv minimalnix znacheniy [n]:");
             for (int i = 0; i < n; i++)
             {
-                min1[i] = num1[i,1];
+                min1[i] = num1[i,0];
                 for (int k = 0; k < m; k++)
                 {
                     if (min1[i] > num1[i, k])
