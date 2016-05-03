@@ -28,24 +28,24 @@ namespace Lecture3_Homework2
             Console.WriteLine("Введите целые числа от -128 до 127 через Enter,");
             Console.WriteLine("        для заверщения ввода укажите - 1 ");
             sbyte x;
-            List<sbyte> MyList = new List<sbyte>();
-            HashSet<sbyte> Dupl = new HashSet<sbyte>();
+            List<sbyte> number = new List<sbyte>();
+            HashSet<sbyte> duplicateNumber = new HashSet<sbyte>();
             x = Convert.ToSByte(Console.ReadLine());
 
             while (x != -1)
             {
-                if (MyList.Contains(x))
+                if (number.Contains(x))
                 {
-                    Dupl.Add(x);
+                    duplicateNumber.Add(x);
                 }
                 else
                 {
-                    MyList.Add(x);
+                    number.Add(x);
                 }
                 x = Convert.ToSByte(Console.ReadLine());
             }
 
-            DisplaySet(Dupl);
+            DisplaySet(duplicateNumber);
          }        
     }
 }
