@@ -10,6 +10,9 @@ namespace Lecture4_Task2
     {
         static void Main(string[] args)
         {
+            Phone p = new Phone("012","0123456");
+            Console.WriteLine($"({p.GetCode}) { p.GetPhoneNumber}");
+            
         }
     }
 }

@@ -16,6 +16,11 @@ namespace Lecture4_Task1
             _code = code;
             _phoneNumber = phoneNumber;
         }
+        public Phone( string phoneNumber)
+        {
+            _phoneNumber = phoneNumber;
+        }
+
         public string PrintPhone()
         {
             if (_code == null || _code == "")
