@@ -8,23 +8,23 @@ namespace Lecture4_Task1
 {
     public class Phone
     {
-        public readonly string Code;
-        public readonly string PhoneNumber;
+        private readonly string _code;
+        private readonly string _phoneNumber;
 
         public Phone(string code, string phoneNumber)
         {
-            Code = code;
-            PhoneNumber = phoneNumber;
+            _code = code;
+            _phoneNumber = phoneNumber;
         }
         public string PrintPhone()
         {
-            if (Code == null || Code == "")
+            if (_code == null || _code == "")
             {
-                return PhoneNumber;
+                return _phoneNumber;
             }
             else
             {
-                return "(" + Code + ")" + PhoneNumber;
+                return "(" + _code + ")" + _phoneNumber;
             }
         }
     }
