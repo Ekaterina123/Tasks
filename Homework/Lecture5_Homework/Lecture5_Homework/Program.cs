@@ -51,10 +51,19 @@ namespace Lecture5_Homework
             */
 
             // Расчетный
+            /*
             CheckingAccount myCheckingSchet = new CheckingAccount(2, 1003, "Тестовый Тест Тестович", 600, true);
             myCheckingSchet.PayForService();
             Console.WriteLine(myCheckingSchet.FormattedValue);
+            */
 
+            // Металлический
+            MetalAccount myMetalSchet = new MetalAccount(1004, true, "Золото", 50, 1500);
+            Console.WriteLine(myMetalSchet.FormattedValue);
+            myMetalSchet.AddSumm(1500);
+            myMetalSchet.ExtractSumm(3000);
+            myMetalSchet.ExtractSumm(73501);
+            Console.WriteLine(myMetalSchet.FormattedValue);
 
 
             //  mySberSchet.ExtractSumm(2);

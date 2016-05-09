@@ -13,6 +13,12 @@ namespace Lecture5_Homework
         private decimal _summ;  //Текущая сумма на счете не меньше нуля
         private bool _isActiv; //Статус счета
 
+
+        public BaseAccount (uint id,  bool isActiv)
+        {
+            _id = id;
+            _isActiv = isActiv;
+        }
         public BaseAccount (uint id, string fio, int summ, bool isActiv)
             {
             _id = id;
@@ -21,8 +27,8 @@ namespace Lecture5_Homework
             _isActiv = isActiv;
             }
         public decimal getSumm { get { return _summ;  }}
-
-        public bool AddSumm(decimal value) //Пополнение счета
+        public bool getStatus { get { return _isActiv; } }
+        public virtual bool AddSumm(decimal value) //Пополнение счета
         {
             if (_isActiv == true)
             {
@@ -82,6 +88,5 @@ namespace Lecture5_Homework
                 return $"Номер счета: {_id}" + "\n" + $"Владелец: {_fio}" + "\n" + $"Сумма: {_summ}" + "\n" + $"Стутс счета: {_isActiv}";
             }
         }
-
-}
+    }
 }
