@@ -10,7 +10,7 @@ namespace Lecture5_Homework
     {
         private uint _id;    //Номер счета
         private string _fio; //Владелец
-        private int _summ;  //Текущая сумма на счете не меньше нуля
+        private decimal _summ;  //Текущая сумма на счете не меньше нуля
         private bool _isActiv; //Статус счета
 
         public BaseAccount (uint id, string fio, int summ, bool isActiv)
@@ -20,33 +20,44 @@ namespace Lecture5_Homework
             _summ = summ;
             _isActiv = isActiv;
             }
-        public int getSumm { get { return _summ;  }}
+        public decimal getSumm { get { return _summ;  }}
 
-        public bool IsActivAccount {get; set;}
-
-        public bool AddSumm(int value) //Пополнение счета
+        public bool AddSumm(decimal value) //Пополнение счета
         {
-            if (IsActivAccount)
+            if (_isActiv == true)
             {
                 _summ = _summ + value;
-                return true;          //$"Счет пополнен на сумму {value}.Текущая сумма счета: {_summ }";
+                Console.WriteLine($"Счет пополнен на сумму {value}.Текущая сумма счета: {_summ }");
+                return true;         
             }
             else
             {
+                Console.WriteLine("Зачисление на счет не произведено, т.к. счет закрыт.");
                 return false; //счет закрыт
             }
         }
-        public bool ExtractSumm(int value) //Списание со счета
+        public virtual bool ExtractSumm(decimal value) //Списание со счета
         {
-            if (IsActivAccount & value <= _summ)
+            if (_isActiv)
             {
-                _summ = _summ - value;
-                return true; //$"Со счета списана сумма {value}.Текущая сумма счета: {_summ }";
+                if (value <= _summ)
+                {
+                    _summ = _summ - value;
+                    Console.WriteLine($"Со счета списана сумма {value}.Текущая сумма счета: {_summ }");
+                    return true; 
+                }
+                else
+                {
+                    Console.WriteLine($"На счете нет запрашиваемой суммы={value}, т.к. текущий баланс счета={_summ }, списание не произошло.");
+                    return false; 
+                }
             }
-           else
+            else
             {
-                return false; //return $"На счете нет запрашиваемой суммы {value} или счет закрыт, списание не произошло.";
+                Console.WriteLine("Списание со счета не произведено, т.к. счет закрыт.");
+                return false; 
             }
+            
         }
 
         public bool CloseAccount() //закрытие счета
@@ -54,14 +65,23 @@ namespace Lecture5_Homework
             if (_summ == 0)
             {
                 _isActiv = false;
+                Console.WriteLine("Счет успешно закрыт.");
                 return true;
             }
             else
             {
+                Console.WriteLine($"Счет не закрыт. т.к. для закрытия счета необходим нулевой баланс. Текущий баланс счета = {_summ}");
                 return false;
             }
         }
    
+        public virtual string FormattedValue 
+        {
+            get
+            {
+                return $"Номер счета: {_id}" + "\n" + $"Владелец: {_fio}" + "\n" + $"Сумма: {_summ}" + "\n" + $"Стутс счета: {_isActiv}";
+            }
+        }
 
 }
 }

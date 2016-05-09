@@ -17,9 +17,9 @@ namespace Lecture5_Homework
         List<BaseAccount> accounts = new List<BaseAccount>();
        
 
-        public int SummAccount()
+        public decimal SummAccount()
         {
-            int summAll = 0;
+            decimal summAll = 0;
             for (int i = 0; i < accounts.Count; i++)
             {
                 summAll = summAll + accounts[i].getSumm;

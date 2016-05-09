@@ -28,13 +28,37 @@ namespace Lecture5_Homework
     {
         static void Main(string[] args)
         {
+            // Сберегательный
+            /* 
+             SberAccount mySberSchet = new SberAccount(10001, "Тестовый Тест Тестович",600, true);
+             Console.WriteLine(mySberSchet.FormattedValue);
+             mySberSchet.AddSumm(10);
+             mySberSchet.ExtractSumm(611);
+             mySberSchet.CloseAccount();
+             mySberSchet.ExtractSumm(610);
+             mySberSchet.CloseAccount();
+             Console.WriteLine(mySberSchet.FormattedValue);
+             */
 
-            BaseAccount mySberSchet = new SberAccount(10001, "Тестовый Тест Тестович",600, true);
-            mySberSchet.AddSumm(1);
-            mySberSchet.ExtractSumm(2);
+            // Накопительный
+            /*
+            SavingAccount mySavingSchet = new SavingAccount(100, 11 , 1002, "Тестовый Тест Тестович", 600, true);
+            Console.WriteLine(mySavingSchet.FormattedValue);
+            mySavingSchet.ExtractSumm(110);
+            mySavingSchet.ExtractSumm(50);
+            mySavingSchet.Capital();
+            Console.WriteLine(mySavingSchet.FormattedValue);
+            */
+
+            // Расчетный
+            CheckingAccount myCheckingSchet = new CheckingAccount(2, 1003, "Тестовый Тест Тестович", 600, true);
+            myCheckingSchet.PayForService();
+            Console.WriteLine(myCheckingSchet.FormattedValue);
 
 
 
+            //  mySberSchet.ExtractSumm(2);
+            //  Console.WriteLine(mySberSchet.FormattedValue);
 
             //Лекция 6
             //Сделать класс Клиент, который может содержать множество счетов (можно взять те, что в ДЗ). 

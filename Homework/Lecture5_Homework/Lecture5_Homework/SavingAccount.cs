@@ -15,23 +15,45 @@ namespace Lecture5_Homework
     {
         private uint _firstDeposit;
         private decimal _percent;
-        private bool _capital;
 
-        public SavingAccount(uint firstDeposit, decimal percent, bool capial, uint id, string fio, int summ) : base (id,fio,summ)
+        public SavingAccount(uint firstDeposit, decimal percent,  uint id, string fio, int summ, bool isActiv) : base (id,fio,summ, isActiv)
         {
             _firstDeposit = firstDeposit;
             _percent = percent;
-            _capital = capial;
         }
-    /*    public override string FormattedValue
+
+        
+        public override string FormattedValue
         {
             get
             {
-                return $"Тип счета: Накопительный" + "\n" + "Размер первоначального взноса: {_firstDeposit}" + "\n" + "Процентная ставка: {_percent}" + "\n" + "Капитализация: {_capital}" + "\n" + base.FormattedValue;
+                return "\n" + $"----------Накопительный счет----------" + "\n" + $"Размер первоначального взноса: {_firstDeposit}" + "\n" + $"Процентная ставка: {_percent}" + "\n"  + base.FormattedValue;
             }
-        }*/
+        }
+
+        public override bool ExtractSumm(decimal value)
+        {
+            if (value <= _firstDeposit)
+            {
+                return base.ExtractSumm(value);
+            }
+            else
+            {
+                Console.WriteLine("Для накопительного счета списываемая сумма должна быть не меньше первоначального взноса");
+                Console.WriteLine($"Сумма первоначального взноса={_firstDeposit}, вы пытаетесь списать {value}. Списание не произошло.");
+                return false;
+
+            }
+        }
+
+        public bool Capital()
+        {
+            decimal a = ((getSumm * (_percent/100)) / 12);
+            Console.WriteLine(a);
+            AddSumm((getSumm * (_percent/100)) / 12);
+            return true;
+        }
 
 
-        
     }
 }

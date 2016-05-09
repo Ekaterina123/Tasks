@@ -16,6 +16,13 @@ namespace Lecture5_Homework
             {
             }
 
+        public override string FormattedValue
+        {
+            get
+            {
+                return "\n" + $"--------Сберегательный счет---------" + "\n" + base.FormattedValue;
+            }
+        }
 
     }  
 }

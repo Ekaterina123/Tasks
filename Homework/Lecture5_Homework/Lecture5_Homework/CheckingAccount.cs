@@ -13,11 +13,25 @@ namespace Lecture5_Homework
     {
         private uint _payForService;
 
-        public CheckingAccount(uint payForService, uint id, string fio, int summ) : base (id, fio, summ)
+        public CheckingAccount(uint payForService, uint id, string fio, int summ, bool isActiv) : base (id, fio, summ, isActiv)
         {
             _payForService = payForService;
         }
 
+        public decimal getPayForService { get { return _payForService; } }
+
+        public override string FormattedValue
+        {
+            get
+            {
+                return "\n" + $"----------Расчетный счет----------" + "\n" + $"Плата за обслуживание: {_payForService}" + "\n" + base.FormattedValue;
+            }
+        }
+
+        public bool PayForService()
+        {
+            return ExtractSumm(getPayForService);
+        }
 
     }
 }
