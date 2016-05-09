@@ -28,12 +28,25 @@ namespace Lecture5_Homework
     {
         static void Main(string[] args)
         {
-            Schet mySchet = new Schet(10001, "Тестовый Тест Тестович",600);
-            Console.WriteLine(mySchet.FormattedValue);
-            mySchet.AddSumm(999);
-            mySchet.ExtractSumm(200000);
-            mySchet.ExtractSumm(99);
-            Console.WriteLine(mySchet.FormattedValue);
+
+            BaseAccount mySberSchet = new SberAccount(10001, "Тестовый Тест Тестович",600, true);
+            mySberSchet.AddSumm(1);
+            mySberSchet.ExtractSumm(2);
+
+
+
+
+            //Лекция 6
+            //Сделать класс Клиент, который может содержать множество счетов (можно взять те, что в ДЗ). 
+            //Сделать свойство, отображающее общую сумму денег на всех счетах.
+            //Добавить 2 разных счета.
+
+            /*
+            Client myClient = new Client();
+            myClient.Add(mySchet);
+            myClient.Add(myRaschetn);
+            Console.WriteLine(myClient.SummAccount());
+            */
         }
     }
 }
