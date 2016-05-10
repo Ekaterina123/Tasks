@@ -34,7 +34,7 @@ namespace Lecture5_Homework
 
         public override bool AddSumm(decimal value) //Возможность пополнять счет по текущему курсу
         {
-            if (getStatus == true)
+            if (Status)
             {
                 _grammOfMetal = _grammOfMetal + (value/_rate);
                 Console.WriteLine($"Счет пополнен на {value}, текущее количество граммов={_grammOfMetal}, тип металла: {_typeOfMetal}");
@@ -48,7 +48,7 @@ namespace Lecture5_Homework
         }
         public override bool ExtractSumm(decimal value) //Возможность обналичивать счет по текущему курсу
         {
-            if (getStatus)
+            if (Status)
             {
                 if (value <= CalculateSumm())
                 {
@@ -71,7 +71,7 @@ namespace Lecture5_Homework
         }
 
 
-        public string FormattedValue
+        public string FormattedValueMetal
         {
             get
             {

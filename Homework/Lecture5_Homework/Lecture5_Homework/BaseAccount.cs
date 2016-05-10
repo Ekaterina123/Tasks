@@ -13,7 +13,7 @@ namespace Lecture5_Homework
         private decimal _summ;  //Текущая сумма на счете не меньше нуля
         private bool _isActiv; //Статус счета
 
-
+        public BaseAccount() {  }
         public BaseAccount (uint id,  bool isActiv)
         {
             _id = id;
@@ -26,11 +26,11 @@ namespace Lecture5_Homework
             _summ = summ;
             _isActiv = isActiv;
             }
-        public decimal getSumm { get { return _summ;  }}
-        public bool getStatus { get { return _isActiv; } }
+        public decimal Summ { get { return _summ;  }}
+        public bool Status { get { return _isActiv; } }
         public virtual bool AddSumm(decimal value) //Пополнение счета
         {
-            if (_isActiv == true)
+            if (_isActiv)
             {
                 _summ = _summ + value;
                 Console.WriteLine($"Счет пополнен на сумму {value}.Текущая сумма счета: {_summ }");

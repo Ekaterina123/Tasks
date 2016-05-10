@@ -41,14 +41,14 @@ namespace Lecture5_Homework
              */
 
             // Накопительный
-            /*
+            
             SavingAccount mySavingSchet = new SavingAccount(100, 11 , 1002, "Тестовый Тест Тестович", 600, true);
             Console.WriteLine(mySavingSchet.FormattedValue);
             mySavingSchet.ExtractSumm(110);
             mySavingSchet.ExtractSumm(50);
             mySavingSchet.Capital();
             Console.WriteLine(mySavingSchet.FormattedValue);
-            */
+            
 
             // Расчетный
             /*
@@ -58,12 +58,12 @@ namespace Lecture5_Homework
             */
 
             // Металлический
-            MetalAccount myMetalSchet = new MetalAccount(1004, true, "Золото", 50, 1500);
+           /* MetalAccount myMetalSchet = new MetalAccount(1004, true, "Золото", 50, 1500);
             Console.WriteLine(myMetalSchet.FormattedValue);
             myMetalSchet.AddSumm(1500);
             myMetalSchet.ExtractSumm(3000);
             myMetalSchet.ExtractSumm(73501);
-            Console.WriteLine(myMetalSchet.FormattedValue);
+            Console.WriteLine(myMetalSchet.FormattedValueMetal);*/
 
 
             //  mySberSchet.ExtractSumm(2);
