@@ -12,7 +12,7 @@ namespace Lecture5_Homework
     { 
 
 
-        public SberAccount(uint id, string fio, decimal summ, bool isActiv) : base (id,fio,summ,isActiv)
+        public SberAccount(uint id, string fio, int summ, bool isActiv) : base (id,fio,summ,isActiv)
             {
             }
 

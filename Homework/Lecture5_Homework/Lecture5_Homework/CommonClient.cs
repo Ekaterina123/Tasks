@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace Lecture5_Homework
 {
-    class CommonClient : BankClient
+    public class CommonClient : BankClient
     {
 
 
-
+     /*  public BankClient(string fio, List<BaseAccount> myAccounts) : base ( fio, myAccounts)
+        {
+  
+        }
+        */
+    
     }
 }

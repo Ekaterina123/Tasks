@@ -58,12 +58,12 @@ namespace Lecture5_Homework
             */
 
             // Металлический
-            /* MetalAccount myMetalSchet = new MetalAccount(1004, true, "Золото", 50, 1500);
-             Console.WriteLine(myMetalSchet.FormattedValue);
-             myMetalSchet.AddSumm(1500);
-             myMetalSchet.ExtractSumm(3000);
-             myMetalSchet.ExtractSumm(73501);
-             Console.WriteLine(myMetalSchet.FormattedValueMetal);*/
+           /* MetalAccount myMetalSchet = new MetalAccount(1004, true, "Золото", 50, 1500);
+            Console.WriteLine(myMetalSchet.FormattedValue);
+            myMetalSchet.AddSumm(1500);
+            myMetalSchet.ExtractSumm(3000);
+            myMetalSchet.ExtractSumm(73501);
+            Console.WriteLine(myMetalSchet.FormattedValueMetal);*/
 
 
             //  mySberSchet.ExtractSumm(2);
@@ -80,8 +80,6 @@ namespace Lecture5_Homework
             myClient.Add(myRaschetn);
             Console.WriteLine(myClient.SummAccount());
             */
-            //BankClient myBankClient = new BankClient("Ефимова Екатерина Александровна");
-    
         }
     }
 }

@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace Lecture5_Homework
 {
-    
-   public class VipClient : BankClient
+    class CommonClient : BankClient
     {
-        
 
 
-        //public 
 
     }
 }

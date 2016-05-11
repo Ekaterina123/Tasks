@@ -19,7 +19,7 @@ namespace Lecture5_Homework
             _id = id;
             _isActiv = isActiv;
         }
-        public BaseAccount (uint id, string fio, decimal summ, bool isActiv)
+        public BaseAccount (uint id, string fio, int summ, bool isActiv)
             {
             _id = id;
             _fio = fio;
