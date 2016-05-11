@@ -33,8 +33,9 @@ namespace Lecture5_Homework
 
         public override bool ExtractSumm(decimal value) //5.	Если остаток на счете меньше первоначального взноса...
         {
-
-            if (value <= _firstDeposit)
+            decimal x = 0;
+            x = Summ - value;
+            if (x <= _firstDeposit)
             {
                 return base.ExtractSumm(value);
             }

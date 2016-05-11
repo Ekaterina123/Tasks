@@ -41,14 +41,14 @@ namespace Lecture5_Homework
              */
 
             // Накопительный
-            
+            /*
             SavingAccount mySavingSchet = new SavingAccount(100, 11 , 1002, "Тестовый Тест Тестович", 600, true);
             Console.WriteLine(mySavingSchet.FormattedValue);
             mySavingSchet.ExtractSumm(110);
             mySavingSchet.ExtractSumm(50);
             mySavingSchet.Capital();
             Console.WriteLine(mySavingSchet.FormattedValue);
-            
+            */
 
             // Расчетный
             /*
