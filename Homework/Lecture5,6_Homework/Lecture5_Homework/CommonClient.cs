@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace Lecture5_Homework
 {
-    public class CommonClient : BankClient
+    class CommonClient : BankClient
     {
-
-
-     /*  public BankClient(string fio, List<BaseAccount> myAccounts) : base ( fio, myAccounts)
+        public CommonClient(string fio) : base(fio)
         {
-  
+            Console.WriteLine($"Укажите от 1 до 3 сколько счетов нужно создать для обычного клиента {fio}");
+            uint countListAccount = Convert.ToUInt32(Console.ReadLine());
+             base.AddAccountInList(countListAccount);
         }
-        */
-    
+
     }
 }

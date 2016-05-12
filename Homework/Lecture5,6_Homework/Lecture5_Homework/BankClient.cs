@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lecture5_Homework
 {
-     public abstract class BankClient 
+    abstract class BankClient
     {
         /*Реализовать класс Банковский клиент. 
          * Клиенты могут быть 2х типов: обычные и VIP. 
@@ -18,55 +18,68 @@ namespace Lecture5_Homework
         private uint _id = 0;
         private decimal _summ;
         private bool _isActiv;
+
         private List<SberAccount> _myAccounts = new List<SberAccount>();
-
-        //public BankClient(string fio) {  _fio = fio; }
-
-        public BankClient(string fio, List<SberAccount> myAccounts)
+        public BankClient(string fio)
         {
             _fio = fio;
-            _myAccounts = myAccounts;
         }
 
+        
         public SberAccount CreateAccount()
         {
             _id++;
-            _isActiv = true;
-            Console.WriteLine($"Введите сумму для счета №{_id} клиента {_fio}");
+           Console.WriteLine($"Введите сумму для счета №{_id} клиента {_fio}");
             _summ = Convert.ToDecimal(Console.ReadLine());
-            SberAccount myBaseAccount = new SberAccount(_id,_fio,_summ, true);
-            return myBaseAccount;
+            SberAccount myBaseAccount = new SberAccount(_id, _fio, _summ, true);
+             return myBaseAccount;
         }
-        public virtual void AddClient(int _countAccount)
+
+        public virtual void AddAccountInList(uint countAccount)
         {
-            while (_myAccounts.Count < _countAccount)
-            {
+            for (int i = 0; i < countAccount; i++)
                 _myAccounts.Add(CreateAccount());
+
+        }
+
+        public virtual void PrintListAccounts()
+        {
+            Console.WriteLine($"Счета клиента {_fio}");
+            foreach (var account in _myAccounts)
+            {
+                Console.WriteLine(PrintListAccounts(account));
+
             }
         }
 
-        public virtual string PrintListAccounts
+        public virtual string PrintListAccounts(SberAccount myAccount)
         {
-            get
-            {
-                return $"Номер счета: {_id} Сумма: {_summ} Стутс счета: {_isActiv}";
-            }
+             return $"Номер счета: {myAccount.Id} Сумма: {myAccount.Summ} Статус счета: {myAccount.Status}";
         }
-        public decimal SummAllAccount(List<SberAccount> accounts)
+
+
+        public decimal SummAllAccount()//(List<SberAccount> accounts)
            {
                decimal summAll = 0;
-               for (int i = 0; i < accounts.Count; i++)
+               for (int i = 0; i < _myAccounts.Count; i++)
             {
-                summAll = summAll + accounts[i].Summ;
+                summAll = summAll + _myAccounts[i].Summ;
             }
                Console.WriteLine($"Общая сумма: { summAll}");
                return summAll;
            }
 
-        public virtual bool CloseAccount(uint id)
+        public void CloseAccount(uint id) //закрытие счета
         {
-            
-            return true;
+            for (int i = 0; i < _myAccounts.Count; i++)
+            {              
+                   if (_myAccounts[i].Id == id)
+                    {
+                        _isActiv = false;
+                        Console.WriteLine("Счет успешно закрыт.");
+                    }                  
+                else {Console.WriteLine($"Счет {_myAccounts[i].Id} не найден.");}
+                }
+            }
         }
     }
-}

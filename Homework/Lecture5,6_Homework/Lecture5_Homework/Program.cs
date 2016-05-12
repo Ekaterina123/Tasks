@@ -15,7 +15,8 @@ namespace Lecture5_Homework
   но не меньше первоначального взноса, наличие процентной ставки, 
   капитализация процентов за месяц
 • расчетный - возможность пополнения и изъятия денег со счета, 
-  наличие платы за обслуживание, списание суммы за обслуживание со счета
+  наличие платы за обслуживание, списание суммы за обслужи
+  вание со счета
 • обезличенный металлический счет - тип металла, количество грамм, 
   стоимость за грамм (текущий курс), возможность пополнять и обналичивать счет по текущему курсу
 
@@ -80,8 +81,13 @@ namespace Lecture5_Homework
             myClient.Add(myRaschetn);
             Console.WriteLine(myClient.SummAccount());
             */
-            //BankClient myBankClient = new BankClient("Ефимова Екатерина Александровна");
-    
+
+
+            //Домашнее задание 6
+            CommonClient myCommonClient = new CommonClient("Иванов Иван Иванович");
+            myCommonClient.PrintListAccounts();
+            myCommonClient.SummAllAccount();
+           // myCommonClient.AddAccountInList();
         }
     }
 }

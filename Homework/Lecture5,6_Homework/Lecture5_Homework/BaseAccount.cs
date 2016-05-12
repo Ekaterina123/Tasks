@@ -28,6 +28,8 @@ namespace Lecture5_Homework
             }
         public decimal Summ { get { return _summ;  }}
         public bool Status { get { return _isActiv; } }
+        public uint Id { get { return _id; } }
+        public string Fio { get { return _fio; } }
         public virtual bool AddSumm(decimal value) //Пополнение счета
         {
             if (_isActiv)
