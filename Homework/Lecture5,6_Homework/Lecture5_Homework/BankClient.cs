@@ -14,25 +14,21 @@ namespace Lecture5_Homework
          * Реализовать методы создания новых счетов для клиентов, 
          * вывод списка счетов и суммы на счету, закрытие счета по его номеру. */
 
-        /*   public virtual void Add(List<BaseAccount> accounts, BaseAccount a)
-           {
-               accounts.Add(a);
-           }   */
         private string _fio;
         private uint _id = 0;
         private decimal _summ;
         private bool _isActiv;
-        private List<BaseAccount> _myAccounts = new List<BaseAccount>();
+        private List<SberAccount> _myAccounts = new List<SberAccount>();
 
         //public BankClient(string fio) {  _fio = fio; }
 
-          BankClient(string fio, List<BaseAccount> myAccounts)
+        public BankClient(string fio, List<SberAccount> myAccounts)
         {
             _fio = fio;
             _myAccounts = myAccounts;
         }
 
-         SberAccount CreateAccount()
+        public SberAccount CreateAccount()
         {
             _id++;
             _isActiv = true;
@@ -41,9 +37,12 @@ namespace Lecture5_Homework
             SberAccount myBaseAccount = new SberAccount(_id,_fio,_summ, true);
             return myBaseAccount;
         }
-        public virtual void AddClient()
+        public virtual void AddClient(int _countAccount)
         {
-            _myAccounts.Add(CreateAccount());
+            while (_myAccounts.Count < _countAccount)
+            {
+                _myAccounts.Add(CreateAccount());
+            }
         }
 
         public virtual string PrintListAccounts
@@ -53,7 +52,7 @@ namespace Lecture5_Homework
                 return $"Номер счета: {_id} Сумма: {_summ} Стутс счета: {_isActiv}";
             }
         }
-         decimal SummAllAccount(List<BaseAccount> accounts)
+        public decimal SummAllAccount(List<SberAccount> accounts)
            {
                decimal summAll = 0;
                for (int i = 0; i < accounts.Count; i++)
@@ -63,7 +62,11 @@ namespace Lecture5_Homework
                Console.WriteLine($"Общая сумма: { summAll}");
                return summAll;
            }
-          
 
+        public virtual bool CloseAccount(uint id)
+        {
+            
+            return true;
+        }
     }
 }

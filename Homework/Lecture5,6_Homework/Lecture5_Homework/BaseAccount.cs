@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lecture5_Homework
 { 
-    class BaseAccount
+    public class BaseAccount
     {
         private uint _id;    //Номер счета
         private string _fio; //Владелец
